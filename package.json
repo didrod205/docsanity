@@ -1,0 +1,75 @@
+{
+  "name": "docsanity",
+  "version": "0.1.0",
+  "description": "One command for docs-site health: broken links & dead anchors, orphan pages, SEO frontmatter (with site-wide duplicate title/description detection), readability grade, and Markdown structure/alt checks — unified into one score and report. Local, deterministic, no API key.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "docsanity": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "example": "node dist/cli.js scan examples/docs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "docs",
+    "documentation",
+    "docs-site",
+    "markdown",
+    "mdx",
+    "docusaurus",
+    "astro",
+    "nextra",
+    "broken-links",
+    "orphan-pages",
+    "frontmatter",
+    "seo",
+    "readability",
+    "link-checker",
+    "docs-linter",
+    "static-site",
+    "cli"
+  ],
+  "author": "didrod205 (https://github.com/didrod205)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didrod205/docsanity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/didrod205/docsanity/issues"
+  },
+  "homepage": "https://github.com/didrod205/docsanity#readme",
+  "dependencies": {
+    "@didrod2539/linklint": "^0.1.0",
+    "@didrod2539/readlevel": "^0.2.0",
+    "cac": "^6.7.14",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

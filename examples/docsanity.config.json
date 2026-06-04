@@ -1,0 +1,19 @@
+{
+  "extensions": [
+    ".md",
+    ".mdx",
+    ".markdown"
+  ],
+  "requireFrontmatter": [
+    "title",
+    "description"
+  ],
+  "descriptionMin": 50,
+  "descriptionMax": 160,
+  "titleMax": 60,
+  "maxGrade": 14,
+  "minWordsForReadability": 80,
+  "disable": [],
+  "ignore": [],
+  "minScore": 0
+}

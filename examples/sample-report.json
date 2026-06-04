@@ -1,0 +1,236 @@
+{
+  "tool": "docsanity",
+  "version": "0.1.0",
+  "generatedAt": "2026-06-04T00:51:44.774Z",
+  "root": "/Users/yang/오픈소스/docsanity/examples/docs",
+  "summary": {
+    "pages": 5,
+    "score": 82,
+    "grade": "B",
+    "errors": 4,
+    "warnings": 10,
+    "infos": 2,
+    "byDimension": {
+      "links": {
+        "errors": 4,
+        "warnings": 2,
+        "infos": 0
+      },
+      "seo": {
+        "errors": 0,
+        "warnings": 5,
+        "infos": 1
+      },
+      "readability": {
+        "errors": 0,
+        "warnings": 1,
+        "infos": 0
+      },
+      "structure": {
+        "errors": 0,
+        "warnings": 2,
+        "infos": 1
+      }
+    }
+  },
+  "pages": [
+    {
+      "path": "broken.md",
+      "title": "Setup notes",
+      "score": 50,
+      "grade": "F",
+      "counts": {
+        "error": 3,
+        "warning": 3,
+        "info": 2
+      },
+      "findings": [
+        {
+          "dimension": "links",
+          "rule": "links.broken-file-link",
+          "severity": "error",
+          "message": "Link target not found: \"./nope.md\"",
+          "line": 5,
+          "detail": "Resolved to nope.md",
+          "fix": "Fix the path or restore the missing file."
+        },
+        {
+          "dimension": "links",
+          "rule": "links.broken-image",
+          "severity": "error",
+          "message": "Image not found: \"./diagram.png\"",
+          "line": 7,
+          "detail": "Resolved to diagram.png",
+          "fix": "Fix the image path or add the missing file."
+        },
+        {
+          "dimension": "links",
+          "rule": "links.broken-cross-anchor",
+          "severity": "error",
+          "message": "Anchor \"#does-not-exist\" not found in index.md",
+          "line": 5,
+          "fix": "Point to an existing heading slug in the target file."
+        },
+        {
+          "dimension": "seo",
+          "rule": "seo.frontmatter-title",
+          "severity": "info",
+          "message": "Title comes from the H1; add an explicit frontmatter `title` for SEO control",
+          "detail": "Using H1: \"Setup notes\""
+        },
+        {
+          "dimension": "seo",
+          "rule": "seo.missing-description",
+          "severity": "warning",
+          "message": "No frontmatter `description`",
+          "fix": "Add a 50–160 char description for the search snippet."
+        },
+        {
+          "dimension": "structure",
+          "rule": "structure.skipped-heading",
+          "severity": "warning",
+          "message": "Heading jumps from H1 to H3 (\"Skipped level\")",
+          "line": 13,
+          "fix": "Don't skip levels — screen readers and outlines rely on order."
+        },
+        {
+          "dimension": "structure",
+          "rule": "structure.image-alt",
+          "severity": "warning",
+          "message": "Image has no alt text: ./diagram.png",
+          "line": 7,
+          "fix": "Add descriptive alt text: `![what it shows](src)`."
+        },
+        {
+          "dimension": "structure",
+          "rule": "structure.code-language",
+          "severity": "info",
+          "message": "Code block has no language tag",
+          "line": 9,
+          "fix": "Add a language after the opening fence (e.g. ```ts) for highlighting."
+        }
+      ]
+    },
+    {
+      "path": "dense.md",
+      "title": "Architecture rationale",
+      "score": 92,
+      "grade": "A",
+      "counts": {
+        "error": 0,
+        "warning": 2,
+        "info": 0
+      },
+      "findings": [
+        {
+          "dimension": "links",
+          "rule": "links.orphan-document",
+          "severity": "warning",
+          "message": "Orphan page — nothing links here",
+          "fix": "Link to it from an index/README, or remove it if it's obsolete."
+        },
+        {
+          "dimension": "readability",
+          "rule": "readability.too-hard",
+          "severity": "warning",
+          "message": "Reads at grade 32 (College graduate); target ≤ grade 14",
+          "detail": "Flesch ease -80 (Very difficult), 28 words/sentence",
+          "fix": "Shorten sentences and prefer common words to lower the reading grade."
+        }
+      ],
+      "readability": {
+        "grade": 31.5,
+        "gradeLabel": "College graduate",
+        "ease": "Very difficult",
+        "words": 83,
+        "readingTimeSeconds": 25
+      }
+    },
+    {
+      "path": "getting-started.md",
+      "title": "Getting started",
+      "score": 100,
+      "grade": "A",
+      "counts": {
+        "error": 0,
+        "warning": 0,
+        "info": 0
+      },
+      "findings": []
+    },
+    {
+      "path": "index.md",
+      "title": "Documentation",
+      "score": 80,
+      "grade": "B",
+      "counts": {
+        "error": 1,
+        "warning": 2,
+        "info": 0
+      },
+      "findings": [
+        {
+          "dimension": "links",
+          "rule": "links.broken-image",
+          "severity": "error",
+          "message": "Image not found: \"./logo.png\"",
+          "line": 12,
+          "detail": "Resolved to logo.png",
+          "fix": "Fix the image path or add the missing file."
+        },
+        {
+          "dimension": "seo",
+          "rule": "seo.duplicate-title",
+          "severity": "warning",
+          "message": "Duplicate title — also used by 1 other page(s)",
+          "detail": "orphan.md",
+          "fix": "Give each page a unique title; duplicates compete in search results."
+        },
+        {
+          "dimension": "seo",
+          "rule": "seo.duplicate-description",
+          "severity": "warning",
+          "message": "Duplicate description — also used by 1 other page(s)",
+          "detail": "orphan.md",
+          "fix": "Write a unique description per page."
+        }
+      ]
+    },
+    {
+      "path": "orphan.md",
+      "title": "Documentation",
+      "score": 88,
+      "grade": "B",
+      "counts": {
+        "error": 0,
+        "warning": 3,
+        "info": 0
+      },
+      "findings": [
+        {
+          "dimension": "links",
+          "rule": "links.orphan-document",
+          "severity": "warning",
+          "message": "Orphan page — nothing links here",
+          "fix": "Link to it from an index/README, or remove it if it's obsolete."
+        },
+        {
+          "dimension": "seo",
+          "rule": "seo.duplicate-title",
+          "severity": "warning",
+          "message": "Duplicate title — also used by 1 other page(s)",
+          "detail": "index.md",
+          "fix": "Give each page a unique title; duplicates compete in search results."
+        },
+        {
+          "dimension": "seo",
+          "rule": "seo.duplicate-description",
+          "severity": "warning",
+          "message": "Duplicate description — also used by 1 other page(s)",
+          "detail": "index.md",
+          "fix": "Write a unique description per page."
+        }
+      ]
+    }
+  ]
+}
